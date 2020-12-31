@@ -15,6 +15,6 @@
     "Intl::Prompt::YesNo": "lib/Intl/Prompt/YesNo.pm6"
   },
   "resources": [],
-  "license": "Artistic2.0",
+  "license": "Artistic-2.0",
   "source-url": "git://github.com/alabamenhu/IntlPromptYesNo.git"
 }
