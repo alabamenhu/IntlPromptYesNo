@@ -1,0 +1,20 @@
+{
+  "name": "IntlPromptYesNo",
+  "description": "A module for localized confirmation prompts",
+  "version": "0.1",
+  "perl": "6.*",
+  "raku": "6.*",
+  "authors": [
+    "Matthew Stephen Stuckwisch"
+  ],
+  "auth": "github:alabamenhu",
+  "depends": ["Intl::UserLanguage", "Intl::CLDR:ver<0.5+>"],
+  "build-depends": [],
+  "test-depends": [],
+  "provides": {
+    "Intl::Prompt::YesNo": "lib/Intl/Prompt/YesNo.pm6"
+  },
+  "resources": [],
+  "license": "Artistic2.0",
+  "source-url": "git://github.com/alabamenhu/IntlPromptYesNo.git"
+}

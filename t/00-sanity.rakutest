@@ -1,0 +1,4 @@
+use Intl::Prompt::YesNo;
+use Test;
+
+done-testing;

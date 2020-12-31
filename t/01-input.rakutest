@@ -1,0 +1,45 @@
+use Intl::Prompt::YesNo;
+use Test;
+
+#| A class to allow fake input for testing
+class FakeInput {
+    # (thanks to [Coke] for coming up with this)
+    has $.response is rw;
+    method get { $!response }
+}
+
+# Replace standard in with it
+temp $*IN = FakeInput.new;
+
+# Asturian
+$*IN.response = 's';
+ok prompt-yes-no :language<ast>;
+$*IN.response = 'sí';
+ok prompt-yes-no :language<ast>;
+$*IN.response = 'n';
+nok prompt-yes-no :language<ast>;
+$*IN.response = 'non';
+nok prompt-yes-no :language<ast>;
+
+# Arabic
+$*IN.response = 'نعم';
+ok prompt-yes-no :language<ar>;
+$*IN.response = 'ن';
+ok prompt-yes-no :language<ar>;
+$*IN.response = 'لا';
+nok prompt-yes-no :language<ar>;
+$*IN.response = 'ل';
+nok prompt-yes-no :language<ar>;
+
+# Telegu
+$*IN.response = 'అవును';
+ok prompt-yes-no :language<te>;
+$*IN.response = 'అ';
+ok prompt-yes-no :language<te>;
+$*IN.response = 'వద్దు';
+nok prompt-yes-no :language<te>;
+$*IN.response = 'వ';
+nok prompt-yes-no :language<te>;
+
+
+done-testing;
